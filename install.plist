@@ -13,7 +13,7 @@
                     <key>kind</key>
                     <string>software-package</string>
                     <key>url</key>
-                    <string>http://192.168.0.4/Bhex_US.ipa</string>
+                    <string>https://programyz.github.io/web/Bhex_US.ipa</string>
                 </dict>
             </array>
             <key>metadata</key>
