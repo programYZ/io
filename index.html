@@ -11,5 +11,20 @@
 <!-- <h1/>
 <a title="iPhone" href="https://192.168.**.***/ca.crt">ssl 证书安装</a>
 <h1/> -->
+<div class="wrapper">
+   <p id="text">？</p>
+   <textarea id="input"></textarea>
+   <button onclick="copyText()">copy</button>
+</div>
 </body>
+<script type="text/javascript">
+    function copyText() {
+      var text = document.getElementById("text").innerText;
+      var input = document.getElementById("input");
+      input.value = text; // 修改文本框的内容
+      input.select(); // 选中文本
+      document.execCommand("copy"); // 执行浏览器复制命令
+      alert("复制成功");
+    }
+  </script>
 </html>
