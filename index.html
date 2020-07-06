@@ -13,8 +13,9 @@
 <h1/> -->
 <div class="wrapper">
    <!-- <p id="text">？</p>
-   <textarea id="input"></textarea>
-   <button onclick="copyText()">copy</button> -->
+   <textarea id="input"></textarea> -->
+	 <button style="font-size:40pt" onclick="convertbits()">copy</button>
+	 <button style="height: 100;width: 100;" onclick="convertbits()">copy</button>
 </div>
 </body>
 <script type="text/javascript">
@@ -26,5 +27,41 @@
       document.execCommand("copy"); // 执行浏览器复制命令
       alert("复制成功");
     }
+	function convertbits(){
+		var data = ["3","65","61","234","4","15","172","209","45","216","121","8","229","42","5","195","146","171","134","245","59","156","235","171","66","230","72","181","194","188","234","5","173"];
+		console.log('=========data',data)
+		var frombits = 8;
+		var tobits = 5;
+		var pad = true;
+	  var acc = 0;
+	  var bits = 0;
+	  var ret = [];
+	  var maxv = (1 << tobits) - 1;
+	  for (var p = 0; p < data.length; ++p) {
+			console.log('=========p',p)
+	    var value = data[p];
+	    if (value < 0 || (value >> frombits) !== 0) {
+				console.log('=========value',value)
+	      return null;
+	    }
+	    acc = (acc << frombits) | value;
+	    bits += frombits;
+	    while (bits >= tobits) {
+	      bits -= tobits;
+	      ret.push((acc >> bits) & maxv);
+	    }
+	  }
+	  console.log('=========ret',ret)
+	  if (pad) {
+	    if (bits > 0) {
+	      ret.push((acc << (tobits - bits)) & maxv);
+	    }
+	  } else if (bits >= frombits || ((acc << (tobits - bits)) & maxv)) {
+	    return null;
+		}
+		console.log('=========ret',ret)
+		console.log('=========data',data)
+	  return ret;
+	}
   </script>
 </html>
