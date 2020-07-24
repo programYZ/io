@@ -17,15 +17,15 @@
 			<key>metadata</key>
 			<dict>
 				<key>bundle-identifier</key>
-				<string>com.bluehelix.wallet.ios</string>
+				<string>com.poc.wallet.ios</string>
 				<key>releaseNotes</key>
 				<string>(可以随意填)</string>
 				<key>kind</key>
 				<string>software</string>
 				<key>bundle-version</key>
-				<string>1.0.0</string>
+				<string>1.2.2</string>
 				<key>title</key>
-				<string>HBTC</string>
+				<string>POC</string>
 			</dict>
 		</dict>
 	</array>
